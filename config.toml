@@ -1,0 +1,12 @@
+# Replace "username" with your actual GitHub username before deploying
+base_url = "https://username.github.io"
+title = "Vishal TR Photography"
+description = "Photography by Vishal TR"
+compile_sass = true
+generate_feeds = false
+
+[markdown]
+highlight_code = false
+
+[extra]
+author = "Vishal TR"

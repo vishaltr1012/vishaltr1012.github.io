@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%- set albums = get_section(path="albums/_index.md") %}
+<section class="album-grid">
+  {%- for album in albums.pages %}
+  <a href="{{ album.permalink }}" class="album-card">
+    <div class="album-cover">
+      {%- if album.extra.cover %}
+      <img
+        src="{{ get_url(path='images/' ~ album.slug ~ '/' ~ album.extra.cover) }}"
+        alt="{{ album.title }}"
+        loading="lazy"
+      >
+      {%- else %}
+      <div class="album-cover-placeholder"></div>
+      {%- endif %}
+    </div>
+    <div class="album-info">
+      <h2>{{ album.title }}</h2>
+      {%- if album.description %}
+      <p>{{ album.description }}</p>
+      {%- endif %}
+    </div>
+  </a>
+  {%- endfor %}
+</section>
+{% endblock %}

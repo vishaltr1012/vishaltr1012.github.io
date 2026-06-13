@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {%- if page.title %}{{ page.title }} — {% endif -%}
+    {{ config.title }}
+  </title>
+  <meta name="description" content="{{ config.description }}">
+  <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{{ config.base_url }}" class="site-name">{{ config.title }}</a>
+      <ul>
+        <li><a href="{{ get_url(path='albums') }}">Albums</a></li>
+        <li><a href="{{ get_url(path='about') }}">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© {{ now() | date(format="%Y") }} {{ config.extra.author }}</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="album-header">
+  <h1>{{ page.title }}</h1>
+  {%- if page.description %}
+  <p class="album-description">{{ page.description }}</p>
+  {%- endif %}
+  {%- if page.content %}
+  <div class="album-body">{{ page.content | safe }}</div>
+  {%- endif %}
+</div>
+
+<section class="photo-grid">
+  {%- for photo in page.extra.photos %}
+  <div class="photo-item">
+    <img
+      src="{{ get_url(path='images/' ~ page.slug ~ '/' ~ photo.file) }}"
+      alt="{{ photo.caption | default(value=page.title) }}"
+      loading="lazy"
+    >
+    {%- if photo.caption %}
+    <p class="photo-caption">{{ photo.caption }}</p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</section>
+{% endblock %}
