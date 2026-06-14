@@ -1,5 +1,4 @@
-# Replace "username" with your actual GitHub username before deploying
-base_url = "https://username.github.io"
+base_url = "https://vishaltr1012.github.io"
 title = "Vishal TR Photography"
 description = "Photography by Vishal TR"
 compile_sass = true
