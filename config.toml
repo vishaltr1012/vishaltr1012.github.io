@@ -4,8 +4,5 @@ description = "Photography by Vishal TR"
 compile_sass = true
 generate_feeds = false
 
-[markdown]
-highlight_code = false
-
 [extra]
 author = "Vishal TR"
